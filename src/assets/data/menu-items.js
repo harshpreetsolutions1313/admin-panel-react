@@ -6,7 +6,8 @@ export const MENU_ITEMS = [/*{
   key: 'dashboard',
   label: 'Dashboard',
   icon: 'solar:widget-5-bold-duotone',
-  url: '/dashboard'
+  url: '/dashboard',
+  api: 'http://localhost:5000/api/dashboard'
 },*/ {
   key: 'products',
   label: 'Products',
@@ -15,27 +16,32 @@ export const MENU_ITEMS = [/*{
     key: 'product-list',
     label: 'List',
     url: '/products/product-list',
-    parentKey: 'products'
+    parentKey: 'products',
+    api: 'http://localhost:5000/api/products'
   }, {
     key: 'product-grid',
     label: 'Grid',
     url: '/products/product-grid',
-    parentKey: 'products'
+    parentKey: 'products',
+    api: 'http://localhost:5000/api/products'
   }, {
     key: 'product-details',
     label: 'Details',
     url: '/products/1',
-    parentKey: 'products'
+    parentKey: 'products',
+    api: 'http://localhost:5000/api/products/8'
   }, {
     key: 'product-edit',
     label: 'Edit',
     url: '/products/product-edit',
-    parentKey: 'products'
+    parentKey: 'products',
+    api: 'http://localhost:5000/api/products/8'
   }, {
     key: 'product-add',
     label: 'Create',
     url: '/products/product-add',
-    parentKey: 'products'
+    parentKey: 'products',
+    api: 'http://localhost:5000/api/products'
   }]
 }, /*{
   key: 'category',

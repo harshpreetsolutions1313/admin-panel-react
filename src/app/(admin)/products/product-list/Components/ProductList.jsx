@@ -1,6 +1,5 @@
 import IconifyIcon from '@/components/wrappers/IconifyIcon';
 import { currency } from '@/context/constants';
-import { getProductData } from '@/helpers/data';
 import { useFetchData } from '@/hooks/useFetchData';
 import { Card, CardFooter, CardHeader, CardTitle, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -12,8 +11,28 @@ const ProductCard = ({
   rating,
   size,
   stockLeft,
-  stockSold
+  stockSold,
+  name,
+  stock,
+  reviews,
+  images,
+  description,
+  _id,
+  id
 }) => {
+  // Handle different API response structures
+  const productName = title || name || 'N/A';
+  const productPrice = price || 0;
+  // Handle images array from API
+  const productImage = image || (Array.isArray(images) && images[0]) || '';
+  const productCategory = category || 'N/A';
+  const productSize = size || 'm';
+  const productRating = rating?.star || rating || 0;
+  const productReviews = rating?.review || reviews || 0;
+  const productStockLeft = stockLeft || (typeof stock === 'number' ? stock : stock?.left) || 0;
+  const productStockSold = stockSold || stock?.sold || 0;
+  const productId = _id || id || '';
+
   return <tr>
       <td>
         <div className="form-check ms-1">
@@ -26,37 +45,37 @@ const ProductCard = ({
       <td>
         <div className="d-flex align-items-center gap-2">
           <div className="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-            <img src={image} alt="product" className="avatar-md" />
+            {productImage && <img src={productImage} alt="product" className="avatar-md" style={{ objectFit: 'cover' }} />}
           </div>
           <div>
             <Link to="" className="text-dark fw-medium fs-15">
-              {title}
+              {productName}
             </Link>
             <p className="text-muted mb-0 mt-1 fs-13">
               <span>Size : </span>
-              {size}
+              {productSize}
             </p>
           </div>
         </div>
       </td>
       <td>
         {currency}
-        {price}.00
+        {productPrice}.00
       </td>
       <td>
         <p className="mb-1 text-muted">
-          <span className="text-dark fw-medium">{stockLeft} Item</span> Left
+          <span className="text-dark fw-medium">{productStockLeft} Item</span> Left
         </p>
-        <p className="mb-0 text-muted">{stockSold} Sold</p>
+        <p className="mb-0 text-muted">{productStockSold} Sold</p>
       </td>
-      <td>{category}</td>
+      <td>{productCategory}</td>
       <td>
         {' '}
         <span className="badge p-1 bg-light text-dark fs-12 me-1">
           <IconifyIcon icon="bxs:star" className="align-text-top fs-14 text-warning me-1" />
-          {rating.star}
+          {productRating}
         </span>{' '}
-        {rating.review} Review
+        {productReviews} Review
       </td>
       <td>
         <div className="d-flex gap-2">
@@ -74,7 +93,19 @@ const ProductCard = ({
     </tr>;
 };
 const ProductList = () => {
-  const productData = useFetchData(getProductData);
+  const fetchProductsFromAPI = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/api/products');
+      if (!response.ok) throw new Error('Failed to fetch products');
+      const data = await response.json();
+      return Array.isArray(data) ? data : data.data || [];
+    } catch (error) {
+      console.error('Error fetching products:', error);
+      return [];
+    }
+  };
+  
+  const productData = useFetchData(fetchProductsFromAPI);
   return <Card>
       <CardHeader className="d-flex justify-content-between align-items-center gap-1">
         <CardTitle as={'h4'} className="flex-grow-1">
