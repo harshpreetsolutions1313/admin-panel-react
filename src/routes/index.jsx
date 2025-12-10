@@ -165,11 +165,13 @@ const initialRoutes = [{
   name: 'root',
   element: <Navigate to="/dashboard" />
 }];
+
 const generalRoutes = [{
   path: '/dashboard',
   name: 'Dashboard',
   element: <Dashboard />
 }];
+
 const appsRoutes = [{
   name: 'Chat',
   path: '/apps/chat',
@@ -187,6 +189,7 @@ const appsRoutes = [{
   path: '/apps/todo',
   element: <Todo />
 }];
+
 const customRoutes = [{
   name: 'Welcome',
   path: '/pages/welcome',

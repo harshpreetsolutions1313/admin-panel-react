@@ -1,4 +1,4 @@
-export const MENU_ITEMS = [{
+export const MENU_ITEMS = [/*{
   key: 'general',
   label: 'GENERAL',
   isTitle: true
@@ -7,7 +7,7 @@ export const MENU_ITEMS = [{
   label: 'Dashboard',
   icon: 'solar:widget-5-bold-duotone',
   url: '/dashboard'
-}, {
+},*/ {
   key: 'products',
   label: 'Products',
   icon: 'solar:t-shirt-bold-duotone',
@@ -37,7 +37,7 @@ export const MENU_ITEMS = [{
     url: '/products/product-add',
     parentKey: 'products'
   }]
-}, {
+}, /*{
   key: 'category',
   icon: 'solar:clipboard-list-bold-duotone',
   label: 'Category',
@@ -57,7 +57,7 @@ export const MENU_ITEMS = [{
     url: '/category/category-add',
     parentKey: 'category'
   }]
-}, {
+}, /*{
   key: 'inventory',
   label: 'Inventory',
   icon: 'solar:box-bold-duotone',
@@ -72,7 +72,7 @@ export const MENU_ITEMS = [{
     url: '/inventory/received-orders',
     parentKey: 'inventory'
   }]
-}, {
+}, /*{
   key: 'orders',
   label: 'Orders',
   icon: 'solar:bag-smile-bold-duotone',
@@ -97,7 +97,7 @@ export const MENU_ITEMS = [{
     url: '/orders/order-checkout',
     parentKey: 'orders'
   }]
-}, {
+}, /*{
   key: 'purchases',
   label: 'Purchases',
   icon: 'solar:card-send-bold-duotone',
@@ -117,7 +117,7 @@ export const MENU_ITEMS = [{
     url: '/purchases/purchase-returns',
     parentKey: 'purchases'
   }]
-}, {
+}, /*{
   key: 'attributes',
   label: 'Attributes',
   icon: 'solar:confetti-minimalistic-bold-duotone',
@@ -137,7 +137,7 @@ export const MENU_ITEMS = [{
     url: '/attributes/attributes-add',
     parentKey: 'attributes'
   }]
-}, {
+}, /*{
   key: 'invoice',
   label: 'Invoices',
   icon: 'solar:bill-list-bold-duotone',
@@ -162,11 +162,11 @@ export const MENU_ITEMS = [{
   label: 'Settings',
   icon: 'solar:settings-bold-duotone',
   url: '/settings'
-}, {
+},*/ {
   key: 'users',
   label: 'USERS',
   isTitle: true
-}, {
+}, /*{
   key: 'profile',
   label: 'Profile',
   icon: 'solar:chat-square-like-bold-duotone',
@@ -191,7 +191,7 @@ export const MENU_ITEMS = [{
     url: '/role/role-add',
     parentKey: 'role'
   }]
-}, {
+}, /*{
   key: 'permissions',
   label: 'Permissions',
   icon: 'solar:checklist-minimalistic-bold-duotone',
@@ -211,7 +211,7 @@ export const MENU_ITEMS = [{
     url: '/customer/customer-detail',
     parentKey: 'customer'
   }]
-}, {
+}, /*{
   key: 'seller',
   label: 'Sellers',
   icon: 'solar:shop-bold-duotone',
@@ -240,7 +240,7 @@ export const MENU_ITEMS = [{
   key: 'OTHER',
   label: 'OTHER',
   isTitle: true
-}, {
+}, /*{
   key: 'coupons',
   label: 'Coupons',
   icon: 'solar:leaf-bold-duotone',
@@ -260,11 +260,11 @@ export const MENU_ITEMS = [{
   label: 'Review',
   icon: 'solar:chat-square-like-bold-duotone',
   url: '/review'
-}, {
+},*/ {
   key: 'Other-apps',
   label: 'OTHER APPS',
   isTitle: true
-}, {
+}, /*{
   key: 'apps-chat',
   label: 'Chat',
   icon: 'solar:chat-round-bold-duotone',
@@ -307,7 +307,7 @@ export const MENU_ITEMS = [{
   key: 'custom',
   label: 'CUSTOM',
   isTitle: true
-}, {
+}, /*{
   key: 'pages',
   label: 'Pages',
   icon: 'solar:gift-bold-duotone',
@@ -385,7 +385,7 @@ export const MENU_ITEMS = [{
   key: 'components',
   label: 'COMPONENTS',
   isTitle: true
-}, {
+}, /*{
   key: 'base-ui',
   label: 'Base UI',
   icon: 'solar:bookmark-square-bold-duotone',
@@ -745,4 +745,4 @@ export const MENU_ITEMS = [{
   key: ' Disable Item',
   label: ' Disable Item',
   icon: 'solar:user-block-rounded-bold-duotone'
-}];
+}*/];
